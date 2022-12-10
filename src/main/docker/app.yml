@@ -7,8 +7,9 @@ services:
       - _JAVA_OPTIONS=-Xmx512m -Xms256m
       - SPRING_PROFILES_ACTIVE=prod,api-docs
       - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
-      - SPRING_DATASOURCE_URL=jdbc:mysql://nitetrain-mysql:3306/nitetrain?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
-      - SPRING_LIQUIBASE_URL=jdbc:mysql://nitetrain-mysql:3306/nitetrain?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://nitetrain-mysql:3306/nitetrain?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+      - SPRING_LIQUIBASE_URL=jdbc:mysql://nitetrain-mysql:3306/nitetrain?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
       - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
     # If you want to expose these ports outside your dev PC,
     # remove the "127.0.0.1:" prefix
@@ -20,9 +21,12 @@ services:
     #   - ~/volumes/jhipster/nitetrain/mysql/:/var/lib/mysql/
     volumes:
       - ./config/mysql:/etc/mysql/conf.d
+      - ~/volumes/jhipster/ntrain/mysql/:/var/lib/mysql/
     environment:
-      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      # - MYSQL_ALLOW_EMPTY_PASSWORD=yes
       - MYSQL_DATABASE=nitetrain
+      - MYSQL_ROOT_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
+    #      - MYSQL_ROOT_HOST=%
     # If you want to expose these ports outside your dev PC,
     # remove the "127.0.0.1:" prefix
     ports:

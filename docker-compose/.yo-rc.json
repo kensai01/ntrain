@@ -1,14 +1,13 @@
 {
   "generator-jhipster": {
-    "appsFolders": [
-      "nitetrain"
-    ],
-    "directoryPath": "../",
-    "gatewayType": "SpringCloudGateway",
+    "appsFolders": [],
     "clusteredDbApps": [],
-    "monitoring": "no",
-    "serviceDiscoveryType": "eureka",
     "deploymentType": "docker-compose",
-    "dockerRepositoryName": "kensai01"
+    "directoryPath": "../",
+    "dockerRepositoryName": "kensai01",
+    "gatewayType": "SpringCloudGateway",
+    "jwtSecretKey": "NjM2MmQ3NDBkMWQwMzA5MDQyYzVmNTRlZDFhNzRjMTI3MzBmZmJkZTYzOTk3ZGI5NzRlMzA4NjQzZDljMjMyZjM1YzkxY2M1MDQ0MDlkNTYwOTM2MzM5Y2Y4ZTJmMzE4YjUwMQ==",
+    "monitoring": "no",
+    "serviceDiscoveryType": "eureka"
   }
 }
