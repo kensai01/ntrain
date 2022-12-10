@@ -1,0 +1,71 @@
+
+application {
+  config {
+    baseName nitetrain,
+    applicationType monolith,
+    packageName com.nitetrain,
+    authenticationType jwt,
+    databaseType sql,
+    devDatabaseType mysql,
+    prodDatabaseType mysql,
+    buildTool gradle,
+    cacheProvider ehcache,
+    languages	[en],
+    clientFramework angular,
+    serverPort 8080
+  }
+  entities *
+}
+
+paginate * with pagination
+dto * with mapstruct
+
+
+entity Price {
+	name String required,
+    location String required,
+    description String required,
+    cost BigDecimal min(0) max(10000)
+}
+
+entity Workout {
+	title String required,
+    description String required,
+    time Integer min(0) max(180),
+    videoId String,
+    scaling String
+}
+
+entity BeginnerWorkout {
+	description String required
+}
+
+entity IntermediateWorkout {
+	description String required
+}
+
+entity WorkoutStep {
+	title String required,
+    description String required,
+    stepNumber Integer required
+}
+
+relationship OneToOne {
+  BeginnerWorkout to Workout,
+  IntermediateWorkout to Workout
+}
+
+relationship OneToMany {
+  Workout to WorkoutStep,
+  BeginnerWorkout to WorkoutStep,
+  IntermediateWorkout to WorkoutStep
+}
+
+deployment {
+  deploymentType docker-compose
+  appsFolders [nitetrain]
+  dockerRepositoryName "kensai01"
+}
+
+service * with serviceImpl
+    
