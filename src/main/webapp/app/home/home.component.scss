@@ -2,13 +2,13 @@
 Main page styles
 ========================================================================== */
 
-.hipster {
-  display: inline-block;
-  width: 347px;
-  height: 497px;
-  background: url('../../content/images/jhipster_family_member_0.svg') no-repeat center top;
-  background-size: contain;
-}
+// .hipster {
+//   display: inline-block;
+//   width: 347px;
+//   height: 497px;
+//   background: url('../../content/images/jhipster_family_member_0.svg') no-repeat center top;
+//   background-size: contain;
+// }
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -16,8 +16,174 @@ Main page styles
   only screen and (-o-min-device-pixel-ratio: 2/1),
   only screen and (min-resolution: 192dpi),
   only screen and (min-resolution: 2dppx) {
-  .hipster {
-    background: url('../../content/images/jhipster_family_member_0.svg') no-repeat center top;
-    background-size: contain;
+  //   .hipster {
+  //     background: url('../../content/images/jhipster_family_member_0.svg') no-repeat center top;
+  //     background-size: contain;
+  //   }
+}
+
+/* logo image container, set to absolute */
+.logo-container {
+  top: 30vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+/* header image with linear gradient applied, relative to logo-container */
+.head {
+  position: relative;
+  background-size: cover;
+  background-position: top;
+  height: 96vh;
+  background-image: linear-gradient(to left bottom, rgba(232, 233, 208, 0.7), rgba(9, 14, 3, 0.7)),
+    url(../../content/images/train_background.jpg);
+}
+
+.logo {
+  opacity: 0.8;
+}
+
+.mission-container {
+  display: inline;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.mission {
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+}
+
+/* because .mission #mission-main is more specific, color is overridden with red */
+.mission #mission-main {
+  color: red;
+}
+
+#mission-main {
+  animation-name: swishRight;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in;
+
+  color: blue;
+  display: block;
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 20px;
+  margin-bottom: 10px;
+}
+
+@keyframes swishRight {
+  0% {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  72% {
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+#mission-sub {
+  animation: swishLeft 1.5s ease-out;
+  animation-duration: 0.8s;
+
+  display: block;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 19px;
+  margin-top: 10px;
+}
+
+@keyframes swishLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  72% {
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* visisted and link state are the same */
+.button:visited,
+.button:link {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: 40px;
+  margin-top: 30px;
+  padding: 20px 40px;
+  /* will make rounded edges */
+  border-radius: 100px;
+  /* transition all properties */
+  transition: all 0.3s;
+  position: relative;
+  animation: moveInButton 2s ease-in;
+  animation-fill-mode: backwards;
+}
+
+.button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* related to the initial link state */
+.button:active {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.button-gray {
+  background-color: #e7e7e7;
+  color: #777;
+}
+
+.button::after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+.button-gray::after {
+  background-color: #e7e7e7;
+}
+
+.button:hover::after {
+  transform: scaleX(1.3) scaleY(1.6);
+  opacity: 0;
+}
+
+@keyframes moveInButton {
+  0% {
+    opacity: 0;
+    transform: translateX(120vw);
+  }
+  72% {
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
