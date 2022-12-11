@@ -8,6 +8,7 @@ import { Authority } from 'app/config/authority.constants';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
 import { PricingModule } from './pages/pricing/pricing.module';
+import { WorkoutsModule } from './pages/workouts/workouts.module';
 
 @NgModule({
   imports: [
@@ -36,6 +37,10 @@ import { PricingModule } from './pages/pricing/pricing.module';
         {
           path: 'pricing',
           loadChildren: () => import('./pages/pricing/pricing.module').then(m => PricingModule),
+        },
+        {
+          path: 'workouts',
+          loadChildren: () => import('./pages/workouts/workouts.module').then(m => WorkoutsModule),
         },
         navbarRoute,
         ...errorRoute,
