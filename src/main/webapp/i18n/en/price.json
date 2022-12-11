@@ -18,9 +18,9 @@
         "title": "Price"
       },
       "id": "ID",
-      "name": "Name",
+      "name": "Workout Name",
       "location": "Location",
-      "description": "Description",
+      "description": "Workout Description",
       "cost": "Cost"
     }
   }
