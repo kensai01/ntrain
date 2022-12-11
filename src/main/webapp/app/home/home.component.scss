@@ -42,6 +42,8 @@ Main page styles
 
 .logo {
   opacity: 0.8;
+  width: 100%;
+  height: auto;
 }
 
 .mission-container {
@@ -51,6 +53,8 @@ Main page styles
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  width: 100%;
+  height: auto;
 }
 
 .mission {
@@ -71,7 +75,7 @@ Main page styles
 
   color: blue;
   display: block;
-  font-size: 60px;
+  font-size: 1.5em;
   font-weight: 700;
   letter-spacing: 20px;
   margin-bottom: 10px;

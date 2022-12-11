@@ -28,10 +28,10 @@
           </a>
         </li>
 
-        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <li *ngSwitchCase="true" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
           <a class="nav-link" routerLink="pricing" (click)="collapseNavbar()">
             <span>
-              <fa-icon icon="gears"></fa-icon>
+              <fa-icon icon="tag"></fa-icon>
               <span>Pricing</span>
             </span>
           </a>
