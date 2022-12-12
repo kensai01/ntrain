@@ -8,14 +8,17 @@ import { IWorkout } from '../../../entities/workout/workout.model';
 
 import { ITEMS_PER_PAGE, PAGE_HEADER, TOTAL_COUNT_RESPONSE_HEADER } from 'app/config/pagination.constants';
 import { ASC, DESC, SORT, ITEM_DELETED_EVENT, DEFAULT_SORT_DATA } from 'app/config/navigation.constants';
-import { EntityArrayResponseType, WorkoutService } from '../../../entities/workout/service/workout.service';
+import { EntityArrayResponseType } from '../../../entities/workout/service/workout.service';
+import { WorkoutsService } from '../service/workouts.service';
+import { IWorkouts } from '../workouts.model';
 
 @Component({
   selector: 'jhi-workout',
   templateUrl: './workouts.component.html',
+  styleUrls: ['./workouts.component.scss'],
 })
 export class WorkoutsComponent implements OnInit {
-  workouts?: IWorkout[];
+  workouts?: IWorkouts[];
   isLoading = false;
 
   predicate = 'id';
@@ -26,13 +29,13 @@ export class WorkoutsComponent implements OnInit {
   page = 1;
 
   constructor(
-    protected workoutService: WorkoutService,
+    protected workoutService: WorkoutsService,
     protected activatedRoute: ActivatedRoute,
     public router: Router,
     protected modalService: NgbModal
   ) {}
 
-  trackId = (_index: number, item: IWorkout): number => this.workoutService.getWorkoutIdentifier(item);
+  trackId = (_index: number, item: IWorkouts): number => this.workoutService.getWorkoutIdentifier(item);
 
   ngOnInit(): void {
     this.load();
@@ -75,7 +78,7 @@ export class WorkoutsComponent implements OnInit {
     this.workouts = dataFromBody;
   }
 
-  protected fillComponentAttributesFromResponseBody(data: IWorkout[] | null): IWorkout[] {
+  protected fillComponentAttributesFromResponseBody(data: IWorkouts[] | null): IWorkouts[] {
     return data ?? [];
   }
 

@@ -1,6 +1,7 @@
 package com.nitetrain.repository;
 
 import com.nitetrain.domain.IntermediateWorkout;
+import java.util.List;
 import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
 
@@ -9,4 +10,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface IntermediateWorkoutRepository extends JpaRepository<IntermediateWorkout, Long> {}
+public interface IntermediateWorkoutRepository extends JpaRepository<IntermediateWorkout, Long> {
+    IntermediateWorkout findByWorkoutId(Long workoutId);
+}

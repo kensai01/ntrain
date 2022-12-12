@@ -7,61 +7,33 @@
     <span jhiTranslate="nitetrainApp.workout.home.notFound">No Workouts found</span>
   </div>
 
-  <div class="table-responsive table-entities" id="entities" *ngIf="workouts && workouts.length > 0">
-    <table class="table table-striped" aria-describedby="page-heading">
-      <thead>
-        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
-          <th scope="col" jhiSortBy="id">
-            <div class="d-flex">
-              <span jhiTranslate="global.field.id">ID</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="title">
-            <div class="d-flex">
-              <span jhiTranslate="nitetrainApp.workout.title">Title</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="description">
-            <div class="d-flex">
-              <span jhiTranslate="nitetrainApp.workout.description">Description</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="time">
-            <div class="d-flex">
-              <span jhiTranslate="nitetrainApp.workout.time">Time</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="videoId">
-            <div class="d-flex">
-              <span jhiTranslate="nitetrainApp.workout.videoId">Video Id</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="scaling">
-            <div class="d-flex">
-              <span jhiTranslate="nitetrainApp.workout.scaling">Scaling</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let workout of workouts; trackBy: trackId" data-cy="entityTable">
-          <td>
-            <a [routerLink]="['/workout', workout.id, 'view']">{{ workout.id }}</a>
-          </td>
-          <td>{{ workout.title }}</td>
-          <td>{{ workout.description }}</td>
-          <td>{{ workout.time }}</td>
-          <td>{{ workout.videoId }}</td>
-          <td>{{ workout.scaling }}</td>
-        </tr>
-      </tbody>
-    </table>
+  <div *ngIf="workouts && workouts.length > 0">
+    <ng-container *ngFor="let workout of workouts">
+      <div class="workout-card">
+        <p class="workout-title">{{ workout.title }}</p>
+        <p>{{ workout.description }}</p>
+        <p *ngIf="workout.time">Time: {{ workout.time }}</p>
+        <ul *ngFor="let workoutStep of workout.workoutSteps">
+          <li>{{ workoutStep.title }}<br /></li>
+        </ul>
+        <br />
+        <p><strong>Scaling: </strong>{{ workout.scaling }}</p>
+        <p>{{ workout.time }}</p>
+        <ng-container *ngIf="workout.intermediateDescription && workout.intermidateSteps">
+          <strong>Intermediate</strong>
+          {{ workout.intermediateDescription }}
+          <ul *ngFor="let workoutStep of workout.intermidateSteps">
+            <li>{{ workoutStep.title }}<br /></li>
+          </ul>
+        </ng-container>
+        <ng-container *ngIf="workout.beginnerDescription && workout.beginnerSteps">
+          <strong>Beginner</strong><br />
+          {{ workout.beginnerDescription }}
+          <ul *ngFor="let workoutStep of workout.beginnerSteps">
+            <li>{{ workoutStep.title }}<br /></li>
+          </ul>
+        </ng-container>
+      </div>
+    </ng-container>
   </div>
 </div>

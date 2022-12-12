@@ -39,7 +39,7 @@ import { WorkoutsModule } from './pages/workouts/workouts.module';
           loadChildren: () => import('./pages/pricing/pricing.module').then(m => PricingModule),
         },
         {
-          path: 'workouts',
+          path: 'pages/workouts',
           loadChildren: () => import('./pages/workouts/workouts.module').then(m => WorkoutsModule),
         },
         navbarRoute,

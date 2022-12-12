@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
 import { WorkoutsComponent } from '../list/workouts.component';
-import { WorkoutsRoutingResolveService } from './workouts-routing-resolve.service';
 import { ASC } from 'app/config/navigation.constants';
 
 const workoutRoute: Routes = [

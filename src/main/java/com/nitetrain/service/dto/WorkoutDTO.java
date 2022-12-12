@@ -1,8 +1,18 @@
 package com.nitetrain.service.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.nitetrain.domain.BeginnerWorkout;
+import com.nitetrain.domain.IntermediateWorkout;
+import com.nitetrain.domain.WorkoutStep;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.*;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 /**
  * A DTO for the {@link com.nitetrain.domain.Workout} entity.
@@ -25,6 +35,36 @@ public class WorkoutDTO implements Serializable {
     private String videoId;
 
     private String scaling;
+
+    private Set<WorkoutStep> workoutSteps = new HashSet<>();
+
+    private BeginnerWorkout beginnerWorkout;
+
+    private IntermediateWorkout intermediateWorkout;
+
+    public BeginnerWorkout getBeginnerWorkout() {
+        return beginnerWorkout;
+    }
+
+    public void setBeginnerWorkout(BeginnerWorkout beginnerWorkout) {
+        this.beginnerWorkout = beginnerWorkout;
+    }
+
+    public IntermediateWorkout getIntermediateWorkout() {
+        return intermediateWorkout;
+    }
+
+    public void setIntermediateWorkout(IntermediateWorkout intermediateWorkout) {
+        this.intermediateWorkout = intermediateWorkout;
+    }
+
+    public void setWorkoutSteps(Set<WorkoutStep> workoutSteps) {
+        this.workoutSteps = workoutSteps;
+    }
+
+    public Set<WorkoutStep> getWorkoutSteps() {
+        return workoutSteps;
+    }
 
     public Long getId() {
         return id;
