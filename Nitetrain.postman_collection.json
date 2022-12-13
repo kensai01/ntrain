@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "3c788790-cfed-42ad-88a3-26368438f718",
+		"name": "Nitetrain",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Channels",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer [YOUR_ACCESS_TOKEN]",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&key=AIzaSyBuHkevMWdeIGekAwzK_VPHkfxi5LPJTqg     &id=UC_q_omNPIXWXjzD9WRb8V9A",
+					"protocol": "https",
+					"host": [
+						"youtube",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"youtube",
+						"v3",
+						"channels"
+					],
+					"query": [
+						{
+							"key": "part",
+							"value": "snippet%2CcontentDetails%2Cstatistics"
+						},
+						{
+							"key": "forUsername",
+							"value": "besicm3@gmail.com",
+							"disabled": true
+						},
+						{
+							"key": "key",
+							"value": "AIzaSyBuHkevMWdeIGekAwzK_VPHkfxi5LPJTqg     "
+						},
+						{
+							"key": "mine",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "UC_q_omNPIXWXjzD9WRb8V9A"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Playlists",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyBuHkevMWdeIGekAwzK_VPHkfxi5LPJTqg     &part=contentDetails,snippet&channelId=UC_q_omNPIXWXjzD9WRb8V9A",
+					"protocol": "https",
+					"host": [
+						"www",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"youtube",
+						"v3",
+						"playlists"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "PLIBtb_NuIJ1wE9PRzFoP93gahc2EdVrQl",
+							"disabled": true
+						},
+						{
+							"key": "key",
+							"value": "AIzaSyBuHkevMWdeIGekAwzK_VPHkfxi5LPJTqg     "
+						},
+						{
+							"key": "part",
+							"value": "contentDetails,snippet"
+						},
+						{
+							"key": "forUsername",
+							"value": "@PragerUniversity",
+							"disabled": true
+						},
+						{
+							"key": "channelId",
+							"value": "UC_q_omNPIXWXjzD9WRb8V9A"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Playlist Items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyBuHkevMWdeIGekAwzK_VPHkfxi5LPJTqg     &part=contentDetails,snippet&playlistId=PLV_6glMbRZdPUcqFlTxdPr4PKHcrFfcNO",
+					"protocol": "https",
+					"host": [
+						"www",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"youtube",
+						"v3",
+						"playlistItems"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "PLIBtb_NuIJ1wE9PRzFoP93gahc2EdVrQl",
+							"disabled": true
+						},
+						{
+							"key": "key",
+							"value": "AIzaSyBuHkevMWdeIGekAwzK_VPHkfxi5LPJTqg     "
+						},
+						{
+							"key": "part",
+							"value": "contentDetails,snippet"
+						},
+						{
+							"key": "forUsername",
+							"value": "@PragerUniversity",
+							"disabled": true
+						},
+						{
+							"key": "playlistId",
+							"value": "PLV_6glMbRZdPUcqFlTxdPr4PKHcrFfcNO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Videos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.googleapis.com/youtube/v3/videos?id=GfkfQ3ohPtA&key=AIzaSyBuHkevMWdeIGekAwzK_VPHkfxi5LPJTqg     &part=contentDetails,snippet",
+					"protocol": "https",
+					"host": [
+						"www",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"youtube",
+						"v3",
+						"videos"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "GfkfQ3ohPtA"
+						},
+						{
+							"key": "key",
+							"value": "AIzaSyBuHkevMWdeIGekAwzK_VPHkfxi5LPJTqg     "
+						},
+						{
+							"key": "part",
+							"value": "contentDetails,snippet"
+						},
+						{
+							"key": "forUsername",
+							"value": "@PragerUniversity",
+							"disabled": true
+						},
+						{
+							"key": "channelId",
+							"value": "UC_q_omNPIXWXjzD9WRb8V9A",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
