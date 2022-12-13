@@ -29,6 +29,11 @@ import { RouterModule } from '@angular/router';
         data: { pageTitle: 'nitetrainApp.workoutStep.home.title' },
         loadChildren: () => import('./workout-step/workout-step.module').then(m => m.WorkoutStepModule),
       },
+      {
+        path: 'training-user',
+        data: { pageTitle: 'nitetrainApp.trainingUser.home.title' },
+        loadChildren: () => import('./training-user/training-user.module').then(m => m.TrainingUserModule),
+      },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
   ],

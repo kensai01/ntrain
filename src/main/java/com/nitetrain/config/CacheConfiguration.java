@@ -56,6 +56,7 @@ public class CacheConfiguration {
             createCache(cm, com.nitetrain.domain.IntermediateWorkout.class.getName());
             createCache(cm, com.nitetrain.domain.IntermediateWorkout.class.getName() + ".workoutSteps");
             createCache(cm, com.nitetrain.domain.WorkoutStep.class.getName());
+            createCache(cm, com.nitetrain.domain.TrainingUser.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

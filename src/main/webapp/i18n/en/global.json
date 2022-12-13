@@ -12,6 +12,7 @@
         "beginnerWorkout": "Beginner Workout",
         "intermediateWorkout": "Intermediate Workout",
         "workoutStep": "Workout Step",
+        "trainingUser": "Training User",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

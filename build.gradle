@@ -124,7 +124,7 @@ liquibase {
     activities {
         main {
             driver "com.mysql.cj.jdbc.Driver"
-            url "jdbc:mysql://localhost:3306/nitetrain"
+            url "jdbc:mysql://localhost:3306/nitetrain?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true"
             username "root"
             password System.getenv("SPRING_DATASOURCE_PASSWORD")
             changeLogFile "src/main/resources/config/liquibase/master.xml"
@@ -134,7 +134,7 @@ liquibase {
         }
         diffLog {
             driver "com.mysql.cj.jdbc.Driver"
-            url "jdbc:mysql://localhost:3306/nitetrain"
+            url "jdbc:mysql://localhost:3306/nitetrain?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true"
             username "root"
             password System.getenv("SPRING_DATASOURCE_PASSWORD")
             changeLogFile project.ext.diffChangelogFile

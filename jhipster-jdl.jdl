@@ -20,6 +20,10 @@ application {
 paginate * with pagination
 dto * with mapstruct
 
+entity TrainingUser {
+	firstName String required,
+    lastName String required
+}
 
 entity Price {
 	name String required,
@@ -52,13 +56,14 @@ entity WorkoutStep {
 
 relationship OneToOne {
   BeginnerWorkout to Workout,
-  IntermediateWorkout to Workout
+  IntermediateWorkout to Workout,
+  TrainingUser{internalUser} to User
 }
 
-relationship OneToMany {
-  Workout to WorkoutStep,
-  BeginnerWorkout to WorkoutStep,
-  IntermediateWorkout to WorkoutStep
+relationship ManyToOne {
+  WorkoutStep to Workout,
+  WorkoutStep to BeginnerWorkout,
+  WorkoutStep to IntermediateWorkout
 }
 
 deployment {
