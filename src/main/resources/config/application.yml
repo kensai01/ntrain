@@ -187,6 +187,7 @@ jhipster:
   #   max-age: 1800
   mail:
     from: besicm3@gmail.com
+    enabled: true
   api-docs:
     default-include-pattern: ${server.servlet.context-path:}/api/**
     management-include-pattern: ${server.servlet.context-path:}/management/**
