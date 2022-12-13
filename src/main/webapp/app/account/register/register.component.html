@@ -124,6 +124,76 @@
         </div>
 
         <div class="mb-3">
+          <label class="form-label" for="firstName" jhiTranslate="global.form.firstname.label">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstName"
+            name="firstName"
+            placeholder="{{ 'global.form.firstname.placeholder' | translate }}"
+            formControlName="firstName"
+            data-cy="firstname"
+            #firstName
+          />
+
+          <div
+            *ngIf="
+              registerForm.get('firstName')!.invalid && (registerForm.get('firstName')!.dirty || registerForm.get('firstName')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="registerForm.get('firstName')?.errors?.required"
+              jhiTranslate="register.messages.validate.firstname.required"
+            >
+              Your first name is required.
+            </small>
+
+            <small
+              class="form-text text-danger"
+              *ngIf="registerForm.get('firstName')?.errors?.minlength"
+              jhiTranslate="register.messages.validate.firstname.minlength"
+            >
+              Your first name is required to be at least 1 character.
+            </small>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="lastName" jhiTranslate="global.form.lastname.label">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastName"
+            name="lastName"
+            placeholder="{{ 'global.form.lastname.placeholder' | translate }}"
+            formControlName="lastName"
+            data-cy="lastname"
+            #lastName
+          />
+
+          <div
+            *ngIf="registerForm.get('lastName')!.invalid && (registerForm.get('lastName')!.dirty || registerForm.get('lastName')!.touched)"
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="registerForm.get('lastName')?.errors?.required"
+              jhiTranslate="register.messages.validate.lastname.required"
+            >
+              Your last name is required.
+            </small>
+
+            <small
+              class="form-text text-danger"
+              *ngIf="registerForm.get('login')?.errors?.minlength"
+              jhiTranslate="register.messages.validate.lastname.minlength"
+            >
+              Your last name is required to be at least 1 character.
+            </small>
+          </div>
+        </div>
+
+        <div class="mb-3">
           <label class="form-label" for="password" jhiTranslate="global.form.newpassword.label">New password</label>
           <input
             type="password"

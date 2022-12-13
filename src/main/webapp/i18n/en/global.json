@@ -41,6 +41,10 @@
     "form": {
       "username.label": "Username",
       "username.placeholder": "Your username",
+      "firstname.label": "First Name",
+      "firstname.placeholder": "Your first name",
+      "lastname.label": "Last Name",
+      "lastname.placeholder": "Your last name",
       "currentpassword.label": "Current password",
       "currentpassword.placeholder": "Current password",
       "newpassword.label": "New password",

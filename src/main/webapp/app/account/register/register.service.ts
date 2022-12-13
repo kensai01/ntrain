@@ -4,12 +4,13 @@ import { Observable } from 'rxjs';
 
 import { ApplicationConfigService } from 'app/core/config/application-config.service';
 import { Registration } from './register.model';
+import { ExtendedRegistration } from './extended-register.model';
 
 @Injectable({ providedIn: 'root' })
 export class RegisterService {
   constructor(private http: HttpClient, private applicationConfigService: ApplicationConfigService) {}
 
-  save(registration: Registration): Observable<{}> {
+  save(registration: ExtendedRegistration): Observable<{}> {
     return this.http.post(this.applicationConfigService.getEndpointFor('api/register'), registration);
   }
 }
