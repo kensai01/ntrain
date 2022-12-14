@@ -46,6 +46,15 @@
           </a>
         </li>
 
+        <li *ngSwitchCase="true" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <a class="nav-link" routerLink="pages/videos" (click)="collapseNavbar()">
+            <span>
+              <fa-icon icon="tag"></fa-icon>
+              <span>Videos</span>
+            </span>
+          </a>
+        </li>
+
         <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
         <li
           *ngSwitchCase="true"

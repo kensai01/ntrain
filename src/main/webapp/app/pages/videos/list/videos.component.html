@@ -1,0 +1,26 @@
+<div>
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="videos?.length === 0">
+    <span jhiTranslate="nitetrainApp.videos.home.notFound">No Videos found</span>
+  </div>
+
+  <div *ngIf="videos && videos.length > 0">
+    <div *ngFor="let video of videos">
+      <h2>{{ video.playlistTitle }} Playlist</h2>
+      <p>{{ video.description }}</p>
+      <br />
+      <div *ngFor="let video of video.videos">
+        <p>
+          <strong>{{ video.snippet.title }}</strong>
+        </p>
+        <p>{{ video.snippet.description }}</p>
+        <youtube-player [videoId]="video.id" suggestedQuality="highres" [height]="250" [width]="500" [startSeconds]="4" [endSeconds]="8">
+        </youtube-player>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>
