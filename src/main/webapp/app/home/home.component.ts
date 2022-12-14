@@ -5,6 +5,7 @@ import { takeUntil } from 'rxjs/operators';
 
 import { AccountService } from 'app/core/auth/account.service';
 import { Account } from 'app/core/auth/account.model';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'jhi-home',
@@ -16,13 +17,21 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   private readonly destroy$ = new Subject<void>();
 
-  constructor(private accountService: AccountService, private router: Router) {}
+  constructor(private accountService: AccountService, private router: Router, private meta: Meta, private title: Title) {}
 
   ngOnInit(): void {
     this.accountService
       .getAuthenticationState()
       .pipe(takeUntil(this.destroy$))
       .subscribe(account => (this.account = account));
+
+    this.meta.addTags([
+      { name: 'description', content: 'Home page of Nitetrain fitness training app' },
+      { name: 'author', content: 'kensai01' },
+      { name: 'keywords', content: 'Training, Crossfit, Personal Training, Fitness, training' },
+    ]);
+
+    this.title.setTitle('Nitetrain');
   }
 
   login(): void {
