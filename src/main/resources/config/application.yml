@@ -202,7 +202,6 @@ jhipster:
     license-url:
   security:
     content-security-policy: "default-src 'self' https://www.google-analytics.com; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com; font-src 'self' data:"
-    #.contentSecurityPolicy("default-src 'self'; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.mapbox.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: *.amazonaws.com; font-src 'self' data:")
 
 # ===================================================================
 # Application specific properties
@@ -215,4 +214,4 @@ jhipster:
 
 # application:
 youtube:
-  apikey: AIzaSyBuHkevMWdeIGekAwzK_VPHkfxi5LPJTqg
+  apikey: ${YOU_TUBE_API_KEY}
