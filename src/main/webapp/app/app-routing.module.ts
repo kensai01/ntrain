@@ -10,6 +10,8 @@ import { UserRouteAccessService } from 'app/core/auth/user-route-access.service'
 import { PricingModule } from './pages/pricing/pricing.module';
 import { WorkoutsModule } from './pages/workouts/workouts.module';
 import { VideosModule } from './pages/videos/videos.module';
+import { ContactUsModule } from './pages/contact-us/contact-us.module';
+import { AboutUsModule } from './pages/about-us/about-us.module';
 
 @NgModule({
   imports: [
@@ -46,6 +48,14 @@ import { VideosModule } from './pages/videos/videos.module';
         {
           path: 'pages/videos',
           loadChildren: () => import('./pages/videos/videos.module').then(m => VideosModule),
+        },
+        {
+          path: 'pages/contact-us',
+          loadChildren: () => import('./pages/contact-us/contact-us.module').then(m => ContactUsModule),
+        },
+        {
+          path: 'pages/about-us',
+          loadChildren: () => import('./pages/about-us/about-us.module').then(m => AboutUsModule),
         },
         navbarRoute,
         ...errorRoute,

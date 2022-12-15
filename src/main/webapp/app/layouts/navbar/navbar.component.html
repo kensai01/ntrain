@@ -28,31 +28,76 @@
           </a>
         </li>
 
-        <li *ngSwitchCase="true" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-          <a class="nav-link" routerLink="pricing" (click)="collapseNavbar()">
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <a class="nav-link" routerLink="pages/contact-us" (click)="collapseNavbar()">
             <span>
-              <fa-icon icon="tag"></fa-icon>
-              <span>Pricing</span>
+              <fa-icon icon="address-book"></fa-icon>
+              <span>Contact Us</span>
             </span>
           </a>
         </li>
 
-        <li *ngSwitchCase="true" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-          <a class="nav-link" routerLink="pages/workouts" (click)="collapseNavbar()">
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <a class="nav-link" routerLink="pages/about-us" (click)="collapseNavbar()">
             <span>
-              <fa-icon icon="tag"></fa-icon>
-              <span>Workouts</span>
+              <fa-icon icon="user-ninja"></fa-icon>
+              <span>About Me</span>
             </span>
           </a>
         </li>
 
-        <li *ngSwitchCase="true" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-          <a class="nav-link" routerLink="pages/videos" (click)="collapseNavbar()">
+        <li
+          *ngSwitchCase="true"
+          ngbDropdown
+          class="nav-item dropdown pointer"
+          display="dynamic"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="training-menu" data-cy="training">
             <span>
-              <fa-icon icon="tag"></fa-icon>
-              <span>Videos</span>
+              <fa-icon icon="th-list"></fa-icon>
+              <span>Training</span>
             </span>
           </a>
+          <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="training-menu">
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="pricing"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                (click)="collapseNavbar()"
+              >
+                <fa-icon icon="tag" [fixedWidth]="true"></fa-icon>
+                <span>Pricing</span>
+              </a>
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="pages/workouts"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                (click)="collapseNavbar()"
+              >
+                <fa-icon icon="dumbbell" [fixedWidth]="true"></fa-icon>
+                <span>Workout</span>
+              </a>
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="pages/videos"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                (click)="collapseNavbar()"
+              >
+                <fa-icon icon="video" [fixedWidth]="true"></fa-icon>
+                <span>Videos</span>
+              </a>
+            </li>
+          </ul>
         </li>
 
         <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
