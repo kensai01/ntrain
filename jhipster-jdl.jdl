@@ -40,6 +40,13 @@ entity Workout {
     scaling String
 }
 
+entity Contact {
+	firstName String required,
+    lastName String required,
+    email String required,
+    message String required,
+}
+
 entity BeginnerWorkout {
 	description String required
 }

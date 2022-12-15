@@ -29,4 +29,9 @@ export const EntityNavbarItems = [
     route: 'training-user',
     translationKey: 'global.menu.entities.trainingUser',
   },
+  {
+    name: 'Contact',
+    route: 'contact',
+    translationKey: 'global.menu.entities.contact',
+  },
 ];

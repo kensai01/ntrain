@@ -34,6 +34,11 @@ import { RouterModule } from '@angular/router';
         data: { pageTitle: 'nitetrainApp.trainingUser.home.title' },
         loadChildren: () => import('./training-user/training-user.module').then(m => m.TrainingUserModule),
       },
+      {
+        path: 'contact',
+        data: { pageTitle: 'nitetrainApp.contact.home.title' },
+        loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule),
+      },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
   ],
