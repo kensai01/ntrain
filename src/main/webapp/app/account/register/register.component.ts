@@ -32,7 +32,13 @@ export class RegisterComponent implements AfterViewInit {
     }),
     email: new FormControl('', {
       nonNullable: true,
-      validators: [Validators.required, Validators.minLength(5), Validators.maxLength(254), Validators.email],
+      validators: [
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(254),
+        Validators.email,
+        Validators.pattern('^[\\w-\\.]+@([\\w-]+.)+[\\w-]{2,4}$'),
+      ],
     }),
     firstName: new FormControl('', {
       nonNullable: true,

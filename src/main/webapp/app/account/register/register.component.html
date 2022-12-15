@@ -87,7 +87,6 @@
             formControlName="email"
             data-cy="email"
           />
-
           <div *ngIf="registerForm.get('email')!.invalid && (registerForm.get('email')!.dirty || registerForm.get('email')!.touched)">
             <small
               class="form-text text-danger"
@@ -100,6 +99,14 @@
             <small
               class="form-text text-danger"
               *ngIf="registerForm.get('email')?.errors?.invalid"
+              jhiTranslate="global.messages.validate.email.invalid"
+            >
+              Your email is invalid.
+            </small>
+
+            <small
+              class="form-text text-danger"
+              *ngIf="registerForm.get('email')?.errors?.pattern"
               jhiTranslate="global.messages.validate.email.invalid"
             >
               Your email is invalid.
